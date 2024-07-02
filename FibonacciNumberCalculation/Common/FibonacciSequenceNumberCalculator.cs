@@ -86,6 +86,11 @@ public class FibonacciSequenceNumberCalculator
         var directoryPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, FibonacciFilesDirectoryPath);
         var filePath = Path.Combine(directoryPath, $"{sequenceId}.txt");
 
+        if (!Directory.Exists(directoryPath))
+        {
+            Directory.CreateDirectory(directoryPath);
+        }
+        
         if (File.Exists(filePath))
         {
             try
