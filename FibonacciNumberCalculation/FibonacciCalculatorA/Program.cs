@@ -19,7 +19,7 @@ builder.Services.AddSwaggerGen(c =>
     c.IncludeXmlComments(xmlPath);
 });
 builder.Services.AddSingleton<Common.FibonacciSequenceNumberCalculator>();
-builder.Services.AddSingleton<FibonacciSequencesManager>();
+builder.Services.AddScoped<FibonacciSequencesManager>();
 builder.Services.AddMassTransit(x =>
 {
     x.AddConsumer<FibonacciSequenceNumberCalculatedConsumer>();
